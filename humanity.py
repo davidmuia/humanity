@@ -1,5 +1,6 @@
-import base64
 from datetime import date
+
+import base64
 import os
 import json
 import pickle
@@ -7,13 +8,6 @@ import uuid
 import re
 
 from pandas.core.tools.datetimes import DatetimeScalarOrArrayConvertible
-
-import base64
-import os
-import json
-import pickle
-import uuid
-import re
 
 def download_button(object_to_download, download_filename, button_text, pickle_it=False):
     """
