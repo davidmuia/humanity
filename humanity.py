@@ -19,24 +19,13 @@ st.sidebar.markdown("Select Parameter Filters")
 start_date = st.sidebar.date_input("Pick a start date")
 end_date = st.sidebar.date_input("Pick a end date")
 
-# formData = {
-#     "data":json.dumps({
-#     "request":{
-
-#         }
-#     })
-# }
-
-
-
-# st.markdown(start_date)
-# st.markdown(end_date)
-
+access_token = st.sidebar.text_input("Enter your access token here")
+# "8c5be1163ebe28cb60643eb4cb728b657ea1d14e"
 @st.cache
 def get_shifts(start_date,end_date):
 
     # shifts api
-    shifts_url = "https://www.humanity.com/api/v2/shifts?access_token=e2ac8ad18ff5ba20f2127ad6dd520ad6f35a7f77"
+    shifts_url = f"https://www.humanity.com/api/v2/shifts?access_token={access_token}"
 
     shifts_params = {
         "start_date":start_date,
@@ -45,7 +34,7 @@ def get_shifts(start_date,end_date):
 
 
     # custom reports api
-    # url = "https://www.humanity.com/api/v2/reports/custom?access_token=e2ac8ad18ff5ba20f2127ad6dd520ad6f35a7f77"
+    # url = "https://www.humanity.com/api/v2/reports/custom?access_token={access_token}"
 
     # params = {
     #     "start_date":start_date,
@@ -56,7 +45,7 @@ def get_shifts(start_date,end_date):
 
 
     # locations api
-    location_url = "https://www.humanity.com/api/v2/locations?access_token=e2ac8ad18ff5ba20f2127ad6dd520ad6f35a7f77"
+    location_url = f"https://www.humanity.com/api/v2/locations?access_token={access_token}"
 
     location_params = {
 
@@ -96,7 +85,7 @@ def get_shifts(start_date,end_date):
     df_join[["employee_id", "employee_name"]] = emp[["id", "employee_name"]]
 
     # Employee payroll api, which contains primary location info and company employee id
-    primary_location = requests.get(url = f"https://www.humanity.com/api/v2/payroll/report?start_date={start_date}&end_date={end_date}&type=scheduledhours&access_token=e2ac8ad18ff5ba20f2127ad6dd520ad6f35a7f77").json()
+    primary_location = requests.get(url = f"https://www.humanity.com/api/v2/payroll/report?start_date={start_date}&end_date={end_date}&type=scheduledhours&access_token={access_token}").json()
     primary_location = pd.Series(primary_location["data"])
     primary_location = pd.DataFrame(primary_location)
     primary_location = primary_location[0].apply(pd.Series)
