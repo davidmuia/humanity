@@ -1,14 +1,14 @@
 # Dockerfile, Image, Container
-FROM python:3.9
-
-# ADD app.py .
+FROM python:3.7
 
 WORKDIR /humanity_app
 
 COPY requirements.txt ./requirements.txt
 
 RUN pip install -r requirements.txt
-EXPOSE 8501
+
+EXPOSE 8080
+
 COPY . /app
-ENTRYPOINT [ "streamlit", "run" ]
-CMD [ "app.py" ]
+
+CMD streamlit run --server.port 8080 --server.enableCORS false app.py
