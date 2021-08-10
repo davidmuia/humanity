@@ -1,12 +1,14 @@
 # Dockerfile, Image, Container
 FROM python:3.9
 
-ADD app.py .
+# ADD app.py .
 
 WORKDIR /humanity_app
 
-COPY requirements.txt .
+COPY requirements.txt ./requirements.txt
 
 RUN pip install -r requirements.txt
-
-CMD [ "python", "./app.py" ]
+EXPOSE 8501
+COPY . /app
+ENTRYPOINT [ "streamlit", "run" ]
+CMD [ "app.py" ]
