@@ -220,7 +220,7 @@ def get_shifts(start_date,end_date):
         "Movement"
     )
 
-    del df_join_2["home_location"]
+    # del df_join_2["home_location"]
     del df_join_2["schedule_location"]    
 
     return df_join_2
