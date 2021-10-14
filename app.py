@@ -107,6 +107,10 @@ access_token = "0386290c9d49444b072571c2894f48a75b2da6e3"
 
 st.header("MC Staff Movement")
 
+with st.expander("Click me to view instruction on how to use the tool"):
+    st.write("Select a date range from the sidebar to view staff movements across MCs.")
+    st.info("Please note for the tool to work, you have to select day(s) prior to the current day to see movement")
+
 @st.cache(suppress_st_warning=True)
 def get_shifts(start_date,end_date):
 
