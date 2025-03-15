@@ -17,10 +17,10 @@ st.title("MC Staff Movement")  # Moved to top for better structure
 # Sidebar Configuration (moved to top for clarity)
 with st.sidebar:
     st.markdown("## Parameter Filters")  # Clear section title
-    start_date = st.date_input("Pick a start date", value=date(2024, 1, 1)) # Added value for first load
+    start_date = st.date_input("Pick a start date", value=date.today()) # Added value for first load
     end_date = st.date_input("Pick an end date", value=date.today()) # Added value for first load
 
-    access_token = st.text_input("Enter your access token here", type="password")  # Hide token
+    access_token = st.text_input("Enter your access token here")  # Hide token
     # st.markdown("##### Get access token from [Humanity API Documentation](https://www.humanity.com/api)") #Helpful link
 
     #Download data
