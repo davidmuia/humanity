@@ -55,10 +55,10 @@ pycparser==2.21 #No updates available
 pydeck==0.9.0
 Pygments
 pyparsing==3.1.1
-pyrsistent==0.20.5
+pyrsistent
 python-dateutil==2.9.0
-pytz==2024.1
-pyzmq==25.1.2
+pytz
+pyzmq=
 requests==2.31.0
 Send2Trash==1.8.2
 six==1.16.0 #No updates available
