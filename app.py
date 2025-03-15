@@ -82,7 +82,7 @@ def get_shifts(start_date, end_date, access_token):
         return pd.DataFrame()
 
     try:
-        url = f"https://www.humanity.com/api/v2/reports/custom?start_date={start_date}&end_date={end_date}&fields=id,employee,eid,location,schedule_name,start_day,end_day,start_time,end_time,access_token={access_token}"
+        url = f"https://www.humanity.com/api/v2/reports/custom?start_date={start_date}&end_date={end_date}&fields=id,employee,eid,location,schedule_name,start_day,end_day,start_time,end_time,&type=shifts&access_token={access_token}"
         response = requests.get(url)
         response.raise_for_status()
         custom_report = response.json()
