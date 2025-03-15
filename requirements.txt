@@ -37,7 +37,7 @@ matplotlib-inline==0.1.6
 mistune==2.0.5
 nbclient==0.9.1
 nbconvert==7.16.0
-nbformat==5.12.0
+nbformat
 nest-asyncio==1.6.0
 notebook
 numpy
