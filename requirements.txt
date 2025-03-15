@@ -44,7 +44,7 @@ numpy
 packaging==24.0
 pandas==2.2.1
 pandocfilters==1.5.1
-parso==2024.2.0
+parso
 pickleshare==0.7.5 #No updates available
 Pillow==10.2.0
 prometheus-client==0.20.0
