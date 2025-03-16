@@ -142,7 +142,7 @@ else:
 
 if not data.empty:
     row_num = len(data)
-    columns = ["schedule_name", "employee", "location", "Movement"]
+    columns = ["Movement"]
 
     # Apply filters
     for column in data.columns:
